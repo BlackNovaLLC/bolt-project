@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 236 236 241;
+    --color-secondary: 52 53 65;
+    --color-accent: 16 163 127;
+  }
+
+  body {
+    @apply bg-[#343541] text-[#ececf1];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white 
+    bg-[#10a37f] hover:bg-[#0e906f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#10a37f] 
+    disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center px-4 py-2 border border-gray-600 text-sm font-medium rounded-md text-gray-200 
+    bg-[#343541] hover:bg-[#40414f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 
+    disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200;
+  }
+
+  .input-primary {
+    @apply block w-full rounded-md border-gray-600 bg-[#40414f] text-white shadow-sm 
+    focus:border-[#10a37f] focus:ring-[#10a37f] sm:text-sm transition-colors duration-200;
+  }
+}
+
+/* Sidebar transitions */
+.sidebar-transition {
+  @apply transform transition-transform duration-300 ease-in-out;
+}
+
+.sidebar-open {
+  @apply translate-x-0;
+}
+
+.sidebar-closed {
+  @apply -translate-x-full;
+}
+
+/* Content transitions */
+.content-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.content-with-sidebar {
+  @apply lg:ml-64;
+}
+
+.content-without-sidebar {
+  @apply ml-0;
+}
